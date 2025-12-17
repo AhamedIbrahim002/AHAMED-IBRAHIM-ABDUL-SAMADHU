@@ -1,19 +1,28 @@
 import java.util.Scanner;
 class Calculator
 {
-	public static double smallCalculator(double a, double b,char ch)
+	public static double smallCalculator(double a, double b,String ch)
 	{
 		switch(ch)
 		{
-			case '+':
+			case "+":
+			case "add":
 				return a+b;
-			case '-':
+			case "-":
+			case "sub":
 				return a-b;
-			case '*':
+			case "*":
+			case "mul":
 				return a*b;
-			case '/':
+			case "/":
+			case "quo":
+			{
+				if(b==0)
+				return 0;
 				return a/b;
-			case '%':
+			}
+			case "%":
+			case "rem":
 				return a%b;
 				
 			default:
@@ -30,9 +39,9 @@ public static void main(String args[])
 	Scanner in=new Scanner(System.in);
 	while(true)
 	{
-	System.out.println("+   -> Addition\n" +"-   -> Subtraction\n" +"*   -> Multiplication\n" +"/         -> Division\n" +"%         -> Remainder\n" +"0         -> Exit");
-	char ch=in.next().charAt(0);
-	if(ch=='0')
+	System.out.println("+ or add   -> Addition\n" +"- or sub  -> Subtraction\n" +"*  or mul  -> Multiplication\n" +"/ or quo        -> Division\n" +"%    or  rem     -> Remainder\n" +"0         -> Exit");
+	String ch=in.next();
+	if(ch.charAt(0)=='0')
 	{
 		System.out.println("Exit successfully");
 	break;
@@ -108,4 +117,3 @@ Exit successfully
 
 */
 
-class
